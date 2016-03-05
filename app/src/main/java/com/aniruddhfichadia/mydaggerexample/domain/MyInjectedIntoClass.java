@@ -13,6 +13,7 @@ import javax.inject.Named;
  */
 public class MyInjectedIntoClass
 {
+	// TODO Dagger inject annotations
 	@Inject
 	@Named("something1")
 	MyInjectedClass myInjectedObject1;
@@ -22,7 +23,7 @@ public class MyInjectedIntoClass
 	// TODO comment the @Named annotation to break the build
 	@Named("something2")
 	//TODO Change this to private to break the build
-	MyInjectedClass myInjectedObject2;
+			MyInjectedClass myInjectedObject2;
 
 
 	public MyInjectedIntoClass()
@@ -33,7 +34,8 @@ public class MyInjectedIntoClass
 
 	void inject()
 	{
-		// TODO you use the dagger version of the component to perform injection
+		// TODO Injection happens here. Use the dagger version of the component to perform
+		// injection, they're prefixed with Dagger
 		DaggerMyComponent.builder()
 		                 .myModule(new MyModule())
 		                 .build()
